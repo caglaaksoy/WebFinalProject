@@ -1,0 +1,819 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
+
+:root {
+    --main-color: #FFAFC5;
+    --header-color: #FAC4E2;
+}
+
+html {
+    overflow-x: hidden; /*yataydaki scrollu kapadım*/
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: 'Caveat';
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    box-sizing: border-box;
+    transition: 0.2s ease; /*tıkladığımızda dah ayavaş geçmesi için*/
+}
+
+body {
+    background-color: var(--main-color);
+}
+
+
+/*HEADER START*/
+header .logo {
+    margin-right: 10px;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 0;
+    background-color: var(--header-color);
+    padding: 12px;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    margin-right: 60px;
+    margin-left: 120px;
+}
+
+.headerbutton {
+    margin-right: 10px;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 0;
+    background-color: var(--header-color);
+    padding: 12px;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    margin-right: 120px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    box-shadow: 0px 0px 25px -1px rgba(0,0,0,0.75); /*box-shadow generator*/
+    position: sticky; /* top 0 verince header scrollu kaydırınca tepede kalıyor*/
+    top: 0;
+    z-index: 1000;
+}
+
+    .header .button {
+        margin-right: 10px;
+        border-radius: 1rem;
+        text-decoration: none;
+        color: #ffffff;
+        margin-left: 0;
+        background-color: var(--header-color);
+        padding: 7px;
+        border-right-width: 1px;
+        border-left-width: 1px;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        margin-right: 60px;
+    }
+/*HEADER END*/
+
+/*başlangıç*/
+.baslangic {
+    padding-top: 10px;
+    font-size: 25px;
+    text-align: left;
+    margin-left: 8%;
+    margin-bottom: 10px;
+}
+/*başlangıç*/
+
+/*SLİDER START*/
+div .col {
+    background-color: #ffffff;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+div .item-left {
+    max-width: 1650px;
+    height: 600px;
+}
+
+.slideshow-container {
+    border: 1px solid #ffffff;
+    position: relative;
+    margin: auto;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+    .mySlides img {
+        width: 100%;
+        height: 600px; /*
+        opacity: 0.7;*/
+    }
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+
+
+/*SLİDER END*/
+
+
+/*menu start*/
+.baslikmenu h2 {
+    padding-top: 10px;
+    font-size: 35px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.baslikmenu p {
+    font-size: 20px;
+    margin: 2% 8%;
+}
+
+
+#section-1, #section-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 6%;
+}
+
+.card, .card2 {
+    height: 345px;
+    width: 20%;
+    box-shadow: 0 5px 9px 0 rgba(0,0,0,0.4);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    flex-basis: calc(33.33% - 30px);
+}
+
+    .card:hover, .card2:hover {
+        opacity: 0.7;
+    }
+
+.container-1, .container-2 {
+    padding: 5px 20px;
+}
+
+    .container-1 h2, .container-2 h2 {
+        font-size: 35px;
+    }
+
+    .container-1 p, .container-2 p {
+        margin: 15px 0;
+        font-size: 18px;
+    }
+
+.card img, .card2 img {
+    border-radius: 6px 6px 0 0;
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/*menu end*/
+
+/*menu tab start*/
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #FAC4E2;
+    text-align: center;
+}
+
+    /* Style the buttons inside the tab */
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 20px;
+        margin-left: 8%;
+    }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #FFDADB;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #FFDADB;
+        }
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+#Tatlı h3, #İçecek h3 {
+    margin-left: 8%;
+    margin-top: 1%;
+}
+
+
+/*menu tab end*/
+
+
+
+
+
+
+
+
+/*hakkımızda start*/
+.hakkimizda h2 {
+    padding-top: 10px;
+    font-size: 35px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.hakkimizda p {
+    font-size: 20px;
+    margin: 2% 8%;
+}
+/*hakkımızda end*/
+
+
+
+
+
+.login-box {
+    display: flex;
+    height: 800px;
+}
+
+.loginsol {
+    width: 50%;
+    background-size: cover;
+    position: relative;
+}
+
+    .loginsol img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.9;
+        border-right: 2px solid rgba(255, 255, 255, 1);
+    }
+
+.loginsağ {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginlogo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .loginlogo p {
+        font-family: "Caveat";
+        font-size: 30px;
+        padding: 10px;
+        margin: 0;
+    }
+
+.indexdiv {
+    text-align: center;
+    margin-top: -40px;
+}
+
+.text-center {
+    padding: 80px 0;
+}
+
+    .text-center h2 {
+        margin: 0;
+    }
+
+    .text-center p {
+        margin-top: 20px;
+    }
+
+.logintext input {
+    padding: 8px 20px;
+    border: 2px solid #adadad;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 15px;
+    color: rgba(0,0,0,0.4);
+    box-sizing: border-box;
+}
+
+.password input {
+    padding: 8px 20px;
+    border: 2px solid #adadad;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 15px;
+    color: rgba(0,0,0,0.4);
+    box-sizing: border-box;
+}
+
+.submit input {
+    padding: 8px;
+    border: 2px solid #adadad;
+    border-radius: 8px;
+    font-size: 15px;
+    color: rgba(0,0,0,0.4);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .login-box {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .loginsol {
+        width: 100%;
+    }
+
+    .loginsağ {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+
+
+/*FOOTER START*/
+
+.footer { /*
+    margin-top: 456px;*/
+}
+
+.footer, .reserved {
+    background-color: var(--header-color);
+    padding: 30px;
+    height: 80px;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-items a {
+    padding: 20px;
+    margin-left: 25px;
+    font-size: 24px;
+    color: #ffffff;
+    border-radius: 15px;
+}
+
+    .footer-items a:hover {
+        background-color: #FAD6D6;
+    }
+
+.reserved {
+    color: #ffffff;
+}
+
+/*FOOTER END*/
+
+
+
+/*LOGİN START*/
+.login-box {
+    display: flex;
+    height: 800px;
+}
+
+.loginsol {
+    width: 50%;
+    background-size: cover;
+    position: relative;
+}
+
+    .loginsol img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.9;
+        border-right: 2px solid rgba(255, 255, 255, 1);
+    }
+
+.loginsağ {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginlogo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .loginlogo p {
+        font-family: "Caveat";
+        font-size: 30px;
+        padding: 10px;
+        margin: 0;
+    }
+
+.indexdiv {
+    text-align: center;
+    margin-top: -40px;
+}
+
+.text-center {
+    padding: 80px 0;
+}
+
+    .text-center h2 {
+        margin: 0;
+    }
+
+    .text-center p {
+        margin-top: 20px;
+    }
+
+.logintext input {
+    padding: 8px 20px;
+    border: 2px solid #adadad;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 15px;
+    color: rgba(0,0,0,0.4);
+    box-sizing: border-box;
+}
+
+.password input {
+    padding: 8px 20px;
+    border: 2px solid #adadad;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 15px;
+    color: rgba(0,0,0,0.4);
+    box-sizing: border-box;
+}
+
+.submit input {
+    padding: 8px;
+    border: 2px solid #adadad;
+    border-radius: 8px;
+    font-size: 15px;
+    color: rgba(0,0,0,0.4);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .login-box {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .loginsol {
+        width: 100%;
+    }
+
+    .loginsağ {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+/*LOGİN END*/
+
+
+
+/*KAYIT START*/
+
+
+.kayit-box {
+    display: flex;
+    height: 800px;
+}
+
+.kayitsol {
+    width: 50%;
+    background-size: cover;
+    position: relative;
+}
+
+    .kayitsol img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.9;
+        border-right: 2px solid rgba(255, 255, 255, 1);
+    }
+
+.kayitsağ {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.kayitlogo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+    .kayitlogo p {
+        font-family: "Caveat";
+        font-size: 30px;
+        margin: 0;
+    }
+
+.indexdiv {
+    text-align: center;
+    margin-top: -40px;
+}
+
+.text-center {
+    padding: 40px 0;
+}
+
+    .text-center h2 {
+        margin: 0;
+    }
+
+    .text-center p {
+        margin-top: 20px;
+    }
+
+.kayittext input {
+    padding: 8px 20px;
+    border: 2px solid #adadad;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 15px;
+    color: rgba(0,0,0,0.4);
+    box-sizing: border-box;
+}
+
+.password input {
+    padding: 8px 20px;
+    border: 2px solid #adadad;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 15px;
+    color: rgba(0,0,0,0.4);
+    box-sizing: border-box;
+}
+
+.submit input {
+    padding: 8px;
+    border: 2px solid #adadad;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .kayit-box {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .kayitsol {
+        width: 100%;
+    }
+
+    .kayitsağ {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/*.kayit-box {
+    width: 100%;
+    height: 800px;
+}
+
+.kayitsol {
+    position: absolute;*/ /* İmaj konumlandırması için */
+/*height: 100%;
+    background-size: cover;
+    display: inline-block;
+}
+
+    .kayitsol img {
+        position: absolute;*/ /* Resmi konumlandırmak için */
+/*top: 0;
+        left: 0;
+        width: 870px;
+        height: 87%;
+        object-fit: cover;
+        opacity: 0.9;
+        border-right: 2px solid rgba(255, 255, 255, 1);
+    }
+
+
+
+.kayitsağ {
+    display: inline-block;
+    width: 900px;
+    margin-top: 80px;
+    margin-left: 950px;
+}
+
+
+
+.kayitlogo {
+    margin: 1px 390px 1px 390px;
+    text-align: center;
+    align-items: center;
+}
+
+    .kayitlogo p {
+        font-family: "Caveat";
+        font-size: 30px;
+        padding: 14px;
+        margin-left: 0px;
+    }
+
+.kayittext input {
+    padding: 8px 20px;
+    border: 2px solid;
+    border-color: #adadad;
+    border-radius: 5px;
+}
+
+.password input {
+    padding: 8px 20px;
+    border: 2px solid;
+    border-color: #adadad;
+    border-radius: 5px;
+}
+
+.submit input {
+    padding: 8px;
+    border: 2px solid;
+    border-color: #adadad;
+    border-radius: 8px;
+}
+
+.indexdiv {
+    align-items: center;
+    text-align: center;
+    margin: 0px 260px 0px 260px;
+}
+
+.text-center {
+    padding: 80px 0px 80px 0px;
+}
+
+    .text-center h2 {
+        margin-right: 0px;
+    }
+
+    .text-center p {
+        /padding:10px 40px 0px 40px;
+        / font-size: 30px;
+        margin-top: 20px;
+    }
+
+        .text-center p .kayittext {
+            padding: 30px;
+        }*/
+
+/*KAYIT END*/
+
+
+/*admin*/
+.admin_menu_container {
+    width: 100%;
+    height: 95.8vh;
+    object-fit: cover;
+    text-align: center;
+    background-color: #FFAFC5;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+    .admin_menu_container img {
+        height: 95.8vh;
+    }
+/*admin*/
+
+
+
+.kayitform {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .kayitform label {
+        margin-right: 15px;
+        color: white;
+        width: 120px;
+        text-align: right;
+    }
+
+    .kayitform input[type="text"],
+    .kayitform input[type="password"] {
+        font-size: 15px;
+        color: rgba(0,0,0,0.4);
+        flex: 0.76;
+        padding: 3px;
+        width: 100%;
+    }
+
+.btnkayit {
+    font-size: 13px;
+    color: #fff;
+    font-size: 15px;
+    background-color: rgba(0,0,0,0.4);
+    /* border-color: #0d6efd;*/
+    border-radius: 5px;
+    padding: 15px;
+    border: 2px solid;
+    border-radius: 8px;
+}

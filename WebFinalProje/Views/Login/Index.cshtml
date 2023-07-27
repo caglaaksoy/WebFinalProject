@@ -1,0 +1,50 @@
+﻿@model EntityLayer.Siniflar.Kullanici
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div>
+    <div class="login-box">
+
+
+        <div class="loginsol">
+            <img src="/Images/1.jpg" alt="Alternate Text" />
+        </div>
+        <div class="loginsağ">
+            <div class="loginlogo">
+                <p id="demo1">CAFÉ DE LA LA LA</p>
+            </div>
+            <div class="indexdiv">
+                <div class="text-center">
+                    <h2 style="font-size:24px">Giriş yap</h2>
+
+                    <form method="post" asp-controller="Login" asp-action="Index">
+
+                        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                        {
+                            <div class="alert alert-danger" id="loginError" style="font-size: 14px;">
+                                <strong>Hata:</strong> @ViewBag.ErrorMessage
+                            </div>
+                        }
+
+                        <p class="logintext"><input type="text" name="Email" value="" placeholder="Kullanıcı Adı" required></p>
+
+                        <p class="password"><input type="password" name="Sifre" value="" placeholder="Şifre" required></p>
+
+                        <p class="submit"><input type="submit" name="commit" value="Giriş Yap"></p>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    new CircleType(document.getElementById('demo1'))
+        .radius(184);
+</script>
+

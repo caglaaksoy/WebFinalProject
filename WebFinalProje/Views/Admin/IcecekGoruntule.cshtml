@@ -1,0 +1,31 @@
+﻿@model List<EntityLayer.Siniflar.Icecekler>
+@{
+    ViewData["Title"] = "IcecekGoruntule";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>İçecekler görünütle</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ürün Adı</th>
+        <th>Ürün Fiyatı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.UrunAdi</td>
+            <td>@x.UrunFiyat</td>
+            <td><a href="/Admin/IcecekSil/@x.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/IcecekGetir/@x.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Admin/IcecekEkle/" class="btn btn-primary">EKLE</a>
+

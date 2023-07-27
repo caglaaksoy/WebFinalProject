@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Siniflar.Tatlilar
+@{
+    ViewData["Title"] = "TatliEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Tatlı Ekle</h1>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.UrunAdi)
+    @Html.TextBoxFor(x => x.UrunAdi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunTanim)
+    @Html.TextAreaFor(x => x.UrunTanim, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunFiyat)
+    @Html.TextBoxFor(x => x.UrunFiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunFoto)
+    @Html.TextBoxFor(x => x.UrunFoto, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Kategori)
+    @Html.DropDownListFor(x => x.Kategori.Id  , new SelectList(ViewBag.Kategoriler, "Id", "KategoriAd"), "-- Kategori Seçin --", new { @class = "form-control" })
+
+    <button class="btn btn-primary">Tatlı Ekle</button>
+</form>
+
+

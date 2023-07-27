@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="baslikmenu">
+    <h2>Menü</h2>
+    <p>Menümüzdeki eşsiz lezzetleri burada görüntüleyebilirsiniz.</p>
+</div>
+<div class="tab">
+    <button class="tablinks active" onclick="openCity(event, 'Tatlı')">Tatlılar</button>
+    <button class="tablinks" onclick="openCity(event, 'İçecek')">İçecekler</button>
+
+</div>
+
+
+<div id="Tatlı" class="tabcontent" style="display: block;">
+    <h3>Tatlılar</h3>
+
+    <div id="section-1">
+        @foreach (var x in Model.Tatlilars)
+        {
+            <div class="card">
+
+                <img src="@x.UrunFoto" alt="" />
+                <div class="container-1">
+                    <h2>@x.UrunAdi</h2>
+                    <p>
+                        @x.UrunTanim
+                    </p>
+                    <p>@x.UrunFiyat Tl</p>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+
+</div>
+
+
+<div id="İçecek" class="tabcontent">
+    <h3>İçecekler</h3>
+
+    <div id="section-2">
+        @foreach (var x in Model.Iceceklers)
+        {
+            <div class="card2">
+                <img src="@x.UrunFoto" alt="" />
+                <div class="container-2">
+                    <h2>@x.UrunAdi</h2>
+                    <p>
+                        @x.UrunTanim
+                    </p>
+                    <p>@x.UrunFiyat Tl</p>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
+
+
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+
+

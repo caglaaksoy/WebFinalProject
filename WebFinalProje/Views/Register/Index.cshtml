@@ -1,0 +1,67 @@
+﻿@model EntityLayer.Siniflar.Kullanici
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<div>
+    <div class="kayit-box">
+
+
+        <div class="kayitsol">
+            <img src="/Images/1.jpg" alt="Alternate Text" />
+        </div>
+        <div class="kayitsağ">
+            <div class="kayitlogo">
+                <p id="demo1">CAFÉ DE LA LA LA</p>
+            </div>
+            <div class="indexdiv">
+                <div class="text-center">
+                    <h2 style="font-size:24px; margin-bottom:25px;">Üye Ol</h2>
+
+                    <form class="form-group" method="post">
+
+                        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                        {
+                            <div class="alert alert-danger" id="loginError" style="font-size: 14px;">
+                                <strong>Hata:</strong> @ViewBag.ErrorMessage
+                            </div>
+                        }
+
+                        <div class="logintext">
+                            @Html.LabelFor(x=>x.Ad,"Adınız")
+                            @Html.TextBoxFor(x=>x.Ad, new {@class="form-control"})
+                        </div>
+                        <br />
+
+                        <div class="logintext">
+                            @Html.LabelFor(x=>x.Soyad, "Soyadınız")
+                            @Html.TextBoxFor(x=>x.Soyad, new {@class="form-control"})
+                        </div>
+                        <br />
+
+                        <div class="logintext">
+                            @Html.LabelFor(x=>x.Email,"Email Adresiniz")
+                            @Html.TextBoxFor(x=>x.Email, new {@class="form-control"})
+                        </div>
+                        <br />
+
+                        <div class="password">
+                            @Html.LabelFor(x=>x.Sifre,"Şifreniz")
+                            @Html.PasswordFor(x=>x.Sifre, new {@class="form-control"})
+                        </div>
+                        <br />
+
+                        <p class="submit"><input type="submit" name="commit" value="Üye Ol"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    new CircleType(document.getElementById('demo1'))
+        .radius(384);
+</script>
+

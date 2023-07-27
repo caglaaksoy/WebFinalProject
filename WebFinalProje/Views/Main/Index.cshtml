@@ -1,0 +1,232 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="baslangic">
+    <h2>HOŞGELDİNİZ</h2>
+    <p>Ufak Bir Tatlı ve Kahve Molasına Var Mısınız :)</p>
+</div>
+
+<div class="col item-left" style="margin-left:0px; margin-right:0px;">
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="/Images/2.jpg" style="width:100%">
+            <div class="text">
+                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="/Images/uc.jpg" style="width:100%">
+            <div class="text">
+                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="/Images/1.jpg" style="width:100%">
+            <div class="text">
+                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+            </div>
+        </div>
+
+
+        <div class="mySlides fade">
+            <img src="/Images/bes.jpg" style="width:100%">
+            <div class="text">
+                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+            </div>
+        </div>
+
+
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+</div>
+
+
+<div class="baslikmenu">
+    <h2>Menü</h2>
+    <p>Menümüzdeki eşsiz lezzetleri burada görüntüleyebilirsiniz.</p>
+</div>
+<div class="tab">
+    <button class="tablinks active" onclick="openCity(event, 'Tatlı')">Tatlılar</button>
+    <button class="tablinks" onclick="openCity(event, 'İçecek')">İçecekler</button>
+
+
+</div>
+
+
+<div id="Tatlı" class="tabcontent" style="display: block;">
+    <h3>Tatlılar</h3>
+
+    <div id="section-1">
+        @foreach (var x in Model.Tatlilars)
+        {
+            <div class="card">
+
+                <img src="@x.UrunFoto" alt="" />
+                <div class="container-1">
+                    <h2>@x.UrunAdi</h2>
+                    <p>
+                        @x.UrunTanim
+                    </p>
+                    <p>@x.UrunFiyat Tl</p>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+
+</div>
+
+
+<div id="İçecek" class="tabcontent">
+    <h3>İçecekler</h3>
+
+    <div id="section-2">
+        @foreach (var x in Model.Iceceklers)
+        {
+            <div class="card2">
+                <img src="@x.UrunFoto" alt="" />
+                <div class="container-2">
+                    <h2>@x.UrunAdi</h2>
+                    <p>
+                        @x.UrunTanim
+                    </p>
+                    <p>@x.UrunFiyat Tl</p>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
+
+
+
+
+
+
+<div class="hakkimizda">
+    <h2>Hakkımızda</h2>
+    <p>Café de La La La, misafirlerine birbirinden lezzetli tatlılar ve kahveler sunan keyifli bir kafe deneyimi sunmaktadır. Müşterilerimize benzersiz bir atmosferde rahatlamalarını sağlamak ve damaklarını şımartmak amacıyla her detayı özenle düşünülmüş bir mekandır.</p>
+    <p>Misyonumuz, en kaliteli ve taze malzemeleri kullanarak müşterilerimize unutulmaz lezzetler sunmaktır. İşte bu yüzden, her bir tatlı ve kahvemizi özenle hazırlamak ve müşterilerimize yüksek standartlarda hizmet sunmak için özveriyle çalışıyoruz.</p>
+    <p>Café de La La La olarak, müşterilerimize sadece lezzetli yiyecekler sunmakla kalmıyor, aynı zamanda samimi ve sıcak bir ortam yaratıyoruz. Güler yüzlü personelimiz, her bir misafirimizin ihtiyaçlarına özenle yaklaşır ve kendilerini evlerinde hissetmeleri için elinden geleni yapar.</p>
+    <p>Bizim için müşteri memnuniyeti her zaman önceliklidir. Café de La La La'ya adım attığınızda, birinci sınıf hizmetle karşılanacak ve lezzetli tatlılarımızı ve aromatik kahvelerimizi tadarak kendinizi şımartacaksınız. Sizin için en iyisini sunmak için sürekli olarak menümüzü ve hizmetlerimizi yenileyerek, kafe deneyiminizi daha da iyileştirmek için çalışıyoruz.</p>
+    <p>Café de La La La ailesi olarak, sizleri rahatlatıcı bir ortamda ağırlamaktan ve damak zevkinizi tatmin etmekten mutluluk duyarız. Sizi kafemizde görmek için sabırsızlanıyoruz!</p>
+</div>
+
+
+
+
+
+
+<script>
+
+    let slideIndex = 1;
+    let slideInterval;
+
+    $(document).ready(function () {
+        showSlides(slideIndex);
+
+        $('.prev').click(function () {
+            clearTimeout(slideInterval);
+            slideIndex--;
+            showSlides(slideIndex);
+        });
+
+        $('.next').click(function () {
+            clearTimeout(slideInterval);
+            slideIndex++;
+            showSlides(slideIndex);
+        });
+
+        $('.dot').click(function () {
+            clearTimeout(slideInterval);
+            slideIndex = $(this).index() + 1;
+            showSlides(slideIndex);
+        });
+
+        function showSlides(n) {
+            let i;
+            let slides = $('.mySlides');
+            let dots = $('.dot');
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            slides.hide();
+            dots.removeClass('active');
+            slides.eq(slideIndex - 1).fadeIn();
+            dots.eq(slideIndex - 1).addClass('active');
+            slideInterval = setTimeout(function () {
+                slideIndex++;
+                showSlides(slideIndex);
+            }, 4000);
+        }
+    });
+
+
+</script>
+<script>
+    const arrows = document.querySelectorAll(".arrow");
+    const movieList = document.querySelectorAll(".movie-list");
+
+    arrows.forEach((arrow, i) => {
+        let clickCounter = 0;
+        const imageİtem = movieList[i].querySelectorAll("img").length;
+        console.log(imageİtem);
+
+        arrow.addEventListener("click", function () {
+            clickCounter++;
+            if (imageİtem - (7 + clickCounter) >= 0) {
+                movieList[i].style.transform = `translateX(${movieList[i].computedStyleMap().get("transform")[0].x.value - 270}px)`
+
+            }
+            else {
+                movieList[i].style.transform = "translateX(0)";
+                clickCounter = 0;
+            }
+        });
+    });
+
+</script>
+
+
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+
+<script>
+    new CircleType(document.getElementById('demo1'))
+        .radius(184);
+</script>

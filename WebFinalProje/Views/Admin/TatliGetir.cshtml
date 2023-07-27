@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Siniflar.Tatlilar
+@{
+    ViewData["Title"] = "TatliGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Tatliı Güncelleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("TatliGuncelle", "Admin", FormMethod.Post))
+{
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.Id)
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" , @readonly="readonly" })
+        <br />
+        @Html.LabelFor(x => x.UrunAdi)
+        @Html.TextBoxFor(x => x.UrunAdi, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.UrunTanim)
+        @Html.TextAreaFor(x => x.UrunTanim, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.UrunFiyat)
+        @Html.TextBoxFor(x => x.UrunFiyat, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.UrunFoto)
+        @Html.TextBoxFor(x => x.UrunFoto, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Kategori)
+        @Html.DropDownListFor(x => x.Kategori.Id, new SelectList(ViewBag.Kategoriler, "Id", "KategoriAd"), "-- Kategori Seçin --", new { @class = "form-control" })
+
+        <button class="btn btn-success">Tatlı Güncelle</button>
+    </form>
+}
+
